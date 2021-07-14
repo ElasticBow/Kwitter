@@ -1,9 +1,9 @@
-// Your web app's Firebase configuration
+ // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
     apiKey: "AIzaSyCg5tuXjTCWYMiEV5flN4MApqxNn1N6OTQ",
-    databaseURL: "https://kwitter1-46280-default-rtdb.firebaseio.com/",
     authDomain: "kwitter1-46280.firebaseapp.com",
+    databaseURL: "https://kwitter1-46280-default-rtdb.firebaseio.com",
     projectId: "kwitter1-46280",
     storageBucket: "kwitter1-46280.appspot.com",
     messagingSenderId: "480129067891",
@@ -24,6 +24,9 @@ document.getElementById("output").innerHTML +=row;
       });});}
 getData();
 
+
+
+
 function addRoom()
 {
   room_name = document.getElementById("room_name").value;
@@ -42,4 +45,11 @@ function redirectToRoomName(name)
   console.log(name);
   localStorage.setItem("room_name", name);
   window.location = "kwitter_page.html";
+}
+
+function logout()
+{
+  localStorage.removeItem("user_name");
+  localStorage.removeItem("room_name");
+  window.location = "kwitter.html";
 }
