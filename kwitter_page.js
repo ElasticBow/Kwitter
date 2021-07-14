@@ -12,15 +12,13 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  
 
 user_name=localStorage.getItem("user_name");
 room_name=localStorage.getItem("room_name")
 
 function send()
 {
-      msg = documetn.getElementById("msg").value;
+      msg = document.getElementById("msg").value;
       firebase.database().ref(room_name).push({
             name:user_name,
             message:msg,
